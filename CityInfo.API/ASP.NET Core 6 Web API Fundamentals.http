@@ -1,5 +1,5 @@
 # ASP.NET Core 6 Web API Fundamentals
-
+@portNumber = 7015
 ###
 # @name GET Cities
 GET https://localhost:{{portNumber}}/api/cities
@@ -47,8 +47,8 @@ POST https://localhost:{{portNumber}}/api/cities/3/pointsofinterest
 Content-Type: application/json
 
 {
-    "name": "Père Lachaise",
-    "description": "Famous cemetery where Jim Morrison and Oscar Wilde are buried."
+  "name": "Père Lachaise",
+  "description": "Famous cemetery where Jim Morrison and Oscar Wilde are buried."
 }
 
 ###
@@ -62,8 +62,8 @@ POST https://localhost:{{portNumber}}/api/cities/3/pointsofinterest
 Content-Type: application/json
 
 {
-    "invalidProperty": 1,
-    "description": "Scallywag holystone landlubber or just lubber yardarm tackle Shiver me timbers cog heave down provost Admiral of the Black. Hornswaggle spanker man-of-war yo-ho-ho mutiny splice the main brace jack keelhaul fire ship Corsair. Bounty prow walk the plank lugsail port loot pirate bilge jib scuppers.  Sutler lee matey sloop plunder splice the main brace interloper Yellow Jack maroon quarter. Draft Privateer run a shot across the bow chandler gaff broadside Pirate Round jolly boat skysail bilge. Chandler mutiny careen execution dock splice the main brace bring a spring upon her cable lass run a rig grog blossom smartly.  Gangplank Davy Jones' Locker plunder overhaul draught pinnace blow the man down bring a spring upon her cable no prey, no pay keel. Gold Road gaff grapple sutler scurvy aft bilge come about coffer gunwalls. Scuttle list Davy Jones' Locker pinnace chase trysail draught Pirate Round Jolly Roger log."
+  "invalidProperty": 1,
+  "description": "Scallywag holystone landlubber or just lubber yardarm tackle Shiver me timbers cog heave down provost Admiral of the Black. Hornswaggle spanker man-of-war yo-ho-ho mutiny splice the main brace jack keelhaul fire ship Corsair. Bounty prow walk the plank lugsail port loot pirate bilge jib scuppers.  Sutler lee matey sloop plunder splice the main brace interloper Yellow Jack maroon quarter. Draft Privateer run a shot across the bow chandler gaff broadside Pirate Round jolly boat skysail bilge. Chandler mutiny careen execution dock splice the main brace bring a spring upon her cable lass run a rig grog blossom smartly.  Gangplank Davy Jones' Locker plunder overhaul draught pinnace blow the man down bring a spring upon her cable no prey, no pay keel. Gold Road gaff grapple sutler scurvy aft bilge come about coffer gunwalls. Scuttle list Davy Jones' Locker pinnace chase trysail draught Pirate Round Jolly Roger log."
 }
 
 
@@ -73,8 +73,8 @@ PUT https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 {
-    "name": "Updated - Central Park",
-    "description": "Updated - The most visited urban park in the United States."
+  "name": "Updated - Central Park",
+  "description": "Updated - The most visited urban park in the United States."
 }
 
 ###
@@ -83,7 +83,7 @@ PUT https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 {
-    "name": "Updated again - Central Park"
+  "name": "Updated again - Central Park"
 }
 
 ###
@@ -92,11 +92,11 @@ PATCH https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 [
-    {
-      "op": "replace",
-      "path": "/name",
-      "value": "Updated - Central Park"
-    }
+  {
+    "op": "replace",
+    "path": "/name",
+    "value": "Updated - Central Park"
+  }
 ]
 
 ###
@@ -105,16 +105,16 @@ PATCH https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 [
-    {
-      "op": "replace",
-      "path": "/name",
-      "value": "Updated - Central Park"
-    },
-    {
-      "op": "replace",
-      "path": "/description",
-      "value": "Updated - Description"
-    }
+  {
+    "op": "replace",
+    "path": "/name",
+    "value": "Updated - Central Park"
+  },
+  {
+    "op": "replace",
+    "path": "/description",
+    "value": "Updated - Description"
+  }
 ]
 
 ###
@@ -123,11 +123,11 @@ PATCH https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 [
-    {
-      "op": "replace",
-      "path": "/invalidproperty",
-      "value": "Updated - Central Park"
-    }
+  {
+    "op": "replace",
+    "path": "/invalidproperty",
+    "value": "Updated - Central Park"
+  }
 ]
 
 ###
@@ -136,10 +136,10 @@ PATCH https://localhost:{{portNumber}}/api/cities/1/pointsofinterest/1
 Content-Type: application/json
 
 [
-    {
-      "op": "remove",
-      "path": "/name"
-    }
+  {
+    "op": "remove",
+    "path": "/name"
+  }
 ]
 
 ###
@@ -174,6 +174,6 @@ POST https://localhost:{{portNumber}}/api/authentication/authenticate
 Content-Type: application/json
 
 {
-    "username": "KevinDockx",
-    "password": "This is a relatively long sentence that acts as my password"
+  "username": "KevinDockx",
+  "password": "This is a relatively long sentence that acts as my password"
 }
