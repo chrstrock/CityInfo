@@ -1,3 +1,4 @@
+using CityInfo.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers;
@@ -7,12 +8,18 @@ namespace CityInfo.API.Controllers;
 public class CitiesController : ControllerBase
 {
     [HttpGet]
-    public JsonResult GetCities()
+    public ActionResult<IEnumerable<CityDto>> GetCities()
     {
-        return new JsonResult(new List<object>
-        {
-            new { Id = 1, Name = "New York City" },
-            new { Id = 2, Name = "Antwerp" }
-        });
+        return Ok(CitiesDataStore.Current.Cities);
     }
+
+    [HttpGet("{id:int}")]
+    public ActionResult<CityDto> GetCity(int id)
+    {
+       var cityDto = CitiesDataStore.Current.Cities.FirstOrDefault(c => c.Id == id);
+
+       return cityDto == null ? NotFound() : Ok(cityDto);
+    }
+    
+    
 }

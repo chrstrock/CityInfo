@@ -9,6 +9,6 @@ public class CityInfoContext : DbContext
     {
     }
 
-    public DbSet<City> Cities { get; set; } = null!;
-    public DbSet<PointOfInterest> PointsOfInterest { get; set; } = null!;
+    public DbSet<CityDto> Cities { get; set; } = null!;
+    public DbSet<PointOfInterestDto> PointsOfInterest { get; set; } = null!;
 }

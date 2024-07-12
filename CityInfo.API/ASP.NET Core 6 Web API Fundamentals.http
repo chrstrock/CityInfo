@@ -1,9 +1,8 @@
-# ASP.NET Core 6 Web API Fundamentals
+# ASP.NET Core 8 Web API Fundamentals
 @portNumber = 7015
 ###
 # @name GET Cities
 GET https://localhost:{{portNumber}}/api/cities
-
 ###
 # @name GET City
 GET https://localhost:{{portNumber}}/api/cities/1
