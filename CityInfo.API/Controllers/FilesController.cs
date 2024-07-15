@@ -37,4 +37,25 @@ public class FilesController : ControllerBase
         return File(bytes, contentType, Path.GetFileName(pathToFile));
 
     }
+
+    [HttpPost]
+    public async Task<ActionResult> CreateFile(IFormFile file)
+    {
+        if (file.Length == 0 || file.Length > 20971520 || file.ContentType != "application/pdf")
+        {
+            return BadRequest("No file or an invalid one has been inputted.");
+        }
+        
+        //Create the file path.  Only okay for demo practices
+
+        var path = Path.Combine(Directory.GetCurrentDirectory(), $"uploaded_file_{Guid.NewGuid()}.pdf");
+
+        await using (var stream = new FileStream(path, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+
+        return Ok("Your file has been uploaded successfully");
+
+    }
 }
